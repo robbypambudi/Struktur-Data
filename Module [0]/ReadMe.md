@@ -1,4 +1,8 @@
 # MODULE [0]
+- [MODULE [0]](#module-0)
+  - [Soal 1](#soal-1)
+    - [Deskripsi Soal](#deskripsi-soal)
+    - [Code](#code)
 ---
 ## Soal 1
 

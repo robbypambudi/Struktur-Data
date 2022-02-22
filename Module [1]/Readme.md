@@ -1,4 +1,18 @@
 # Module [1]
+- [Module [1]](#module-1)
+  - [SOAL 1](#soal-1)
+    - [Deskripsi Soal](#deskripsi-soal)
+    - [Code](#code)
+  - [SOAL 2](#soal-2)
+    - [Deskripsi Soal](#deskripsi-soal-1)
+    - [Input](#input)
+    - [Output](#output)
+    - [Contoh Input](#contoh-input)
+    - [Contoh Output](#contoh-output)
+    - [Code](#code-1)
+  - [SOAL 3](#soal-3)
+    - [Deskripsi Soal](#deskripsi-soal-2)
+    - [Code](#code-2)
 ---
 
 ## SOAL 1
