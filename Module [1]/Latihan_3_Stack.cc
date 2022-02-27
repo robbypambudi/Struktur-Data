@@ -30,6 +30,7 @@ bool isEmpty(stack *stack)
 {
     return stack->_size == 0;
 }
+
 void push(stack *stack, char value)
 {
     stackNode *node = new stackNode;

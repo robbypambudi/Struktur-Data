@@ -322,9 +322,113 @@ int main()
 
 ---
 
-## SOAL 3
+## SOAL 3 : STACK
 
 ### Deskripsi Soal 
 Modifikasilah program stack, queue, deque dan priority queue pada github untuk menyimpan tipe string dengan maksimum karakter adalah 100 karakter.
 
 ### Code
+
+**Struct**
+```
+typedef struct stackNode_t
+{
+    char data;
+    struct stackNode_t *next;
+} stackNode;
+
+typedef struct Stack_t
+{
+    stackNode *head;
+    int _size;
+} stack;
+```
+
+**Prototipe Fungsi**
+```
+bool isEmpty(stack *stack);
+void init(stack *stack);
+void push(stack *stack, char value);
+void getString(stack *stack);
+void printElement(stack *node);
+```
+
+**Init**
+```
+void init(stack *stack)
+{
+    stack->head = NULL;
+    stack->_size = 0;
+}
+```
+
+**isEmpty**
+```
+bool isEmpty(stack *stack)
+{
+    return stack->_size == 0;
+}
+```
+
+**Push**
+```
+void push(stack *stack, char value)
+{
+    stackNode *node = new stackNode;
+    node->data = value;
+    node->next = NULL;
+    if (stack->head == NULL)
+    {
+        stack->head = node;
+    }
+    else
+    {
+        stackNode *temp = stack->head;
+        while (temp->next != NULL)
+        {
+            temp = temp->next;
+        }
+        temp->next = node;
+    }
+    stack->_size++;
+}
+```
+
+**printElement**
+```
+void printElement(stack *node)
+{
+    stackNode *temp = node->head;
+    while (temp != NULL)
+    {
+        cout << temp->data;
+        temp = temp->next;
+    }
+}
+```
+
+**getString**
+```
+void getString(stack *stack)
+{
+    char input[1000];
+    cin.getline(input, 1000);
+    int length = strlen(input);
+    for (int i = 0; i < length; i++)
+    {
+        push(stack, input[i]);
+    }
+}
+```
+
+**Main**
+```
+int main()
+{
+    stack stack;
+    init(&stack);
+    getString(&stack);
+    printElement(&stack);
+    return 0;
+}
+```
