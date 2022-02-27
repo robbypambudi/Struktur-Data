@@ -1,4 +1,10 @@
-# Tugas [3]
+
+- [Tugas [3]](#tugas-3)
+  - [Ketua Kelas](#ketua-kelas)
+    - [Deskripsi Soal](#deskripsi-soal)
+    - [Format Input](#format-input)
+    - [Format Output](#format-output)
+    - [Code](#code)# Tugas [3]
 
 ## Ketua Kelas
 ### Deskripsi Soal

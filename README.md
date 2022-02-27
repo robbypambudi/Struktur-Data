@@ -6,6 +6,8 @@
     - [Module [2]](#module-2)
     - [Module [3]](#module-3)
     - [Module [4]](#module-4)
+  - [Tugas Dosen](#tugas-dosen)
+    - [Tugas 3](#tugas-3)
   - [Apa itu List](#apa-itu-list)
     - [About Me](#about-me)
 ---
@@ -33,6 +35,13 @@ Diambil dari
 ### Module [3]
 
 ### Module [4]
+
+---
+## Tugas Dosen
+### Tugas 3
+- Ketua Kelas
+- Marging Two Sorted Linked List
+- [Link](https://github.com/robbypambudi/Struktur-Data/tree/main/Tugas%20%5B3%5D)
 
 ---
 ## Apa itu List
