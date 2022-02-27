@@ -1,11 +1,13 @@
+# Tugas [3]
 
 - [Tugas [3]](#tugas-3)
   - [Ketua Kelas](#ketua-kelas)
     - [Deskripsi Soal](#deskripsi-soal)
     - [Format Input](#format-input)
     - [Format Output](#format-output)
-    - [Code](#code)# Tugas [3]
+    - [Code](#code)
 
+u
 ## Ketua Kelas
 ### Deskripsi Soal
 Pada kegiatan orientasi, salah satu senior meminta dari N mahasiswa baru ditunjuk satu ketua kelas
