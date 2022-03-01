@@ -4,6 +4,7 @@
 typedef struct CLinkedList_t
 {
     int data;
+    int id;
     struct CLinkedList_t *next;
 } CLinkedList;
 
@@ -14,6 +15,8 @@ typedef struct Clist_t
     int _size;
 
 } Clist;
+
+int DATA_SIZE = 1;
 
 // Portotipe
 void init(Clist *l);
@@ -35,6 +38,7 @@ void push(Clist *l, int data)
     CLinkedList *newNode = (CLinkedList *)malloc(sizeof(CLinkedList));
     newNode->data = data;
     newNode->next = l->first;
+    newNode->id = DATA_SIZE++;
 
     if (l->first == NULL)
     {
@@ -59,6 +63,7 @@ void popAt(Clist *L, int index)
         prev = curr;
         curr = curr->next;
     }
+    printf("%d ", curr->id);
     prev->next = curr->next;
     if (curr == L->last)
     {
@@ -70,6 +75,7 @@ void popAt(Clist *L, int index)
 void popFirst(Clist *L)
 {
     L->first = L->first->next;
+    printf("1 ");
     if (L->first == NULL)
     {
         L->last = NULL;
@@ -85,6 +91,7 @@ void popLast(Clist *L)
     {
         prev = prev->next;
     }
+    printf("%d ", prev->next->id);
     prev->next = L->first;
     L->last = prev;
     free(curr);
@@ -102,18 +109,32 @@ void printAll(Clist *l)
     printf("\n");
 }
 
+// Create Function to deleted all linked list
+void deleteLinked(Clist *l)
+{
+    CLinkedList *curr = l->first;
+    CLinkedList *prev = l->first;
+    while (curr != NULL)
+    {
+        prev = curr;
+        curr = curr->next;
+        free(prev);
+    }
+}
+
 void ketuaKelas(Clist *l)
 {
+
     int n, lompat;
+
     scanf("%d %d", &n, &lompat);
 
     // Masukan Data kedalam Linked List
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i <= n; i++)
     {
-        int data;
-        scanf("%d", &data);
-        push(l, data);
+        push(l, i);
     }
+    // printOut(l->_size, lompat);
 
     // Poling Data
     int i = 1;
@@ -133,7 +154,7 @@ void ketuaKelas(Clist *l)
         {
             temp = 1;
         }
-        // printf("Lompat Ke %d , _size %d \n", temp, l->_size);
+
         if (temp == 1)
         {
             if (l->_size == 2 && (size % 2 == 0))
@@ -147,13 +168,13 @@ void ketuaKelas(Clist *l)
         }
         else if (temp == l->_size)
         {
+
             popLast(l);
         }
         else
         {
             popAt(l, temp - 2);
         }
-        // printAll(l);
         N += 1;
         // printf("N = %d\n", N);
         if (N > l->_size && temp > N)
@@ -168,15 +189,22 @@ void ketuaKelas(Clist *l)
         temp = N;
     }
 }
+
 int main()
 {
-    Clist L;
-    init(&L);
-    ketuaKelas(&L);
+    int N;
+    scanf("%d", &N);
+    Clist L[N];
+    int i = 0;
+    while (N--)
+    {
+        init(&L[i]);
+        ketuaKelas(&L[i]);
 
-    printf("Ketua Kelas : ");
-    printAll(&L);
-
-    printf("\n");
+        printf("@\n");
+        printAll(&L[i]);
+        i++;
+        DATA_SIZE = 1;
+    }
     return 0;
 }
