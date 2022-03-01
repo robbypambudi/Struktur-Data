@@ -2,19 +2,20 @@
 
 void popAt(Clist *L, int index)
 {
-    CLinkedList *prev = L->first;       // mengambil pointer first
-    CLinkedList *curr = L->first->next; // mengambil pointer next
+    CLinkedList *prev = L->first;       // mengambil node sebelum node yang akan dihapus
+    CLinkedList *curr = L->first->next; // mengambil node yang akan dihapus
     // printf("\n");
     for (int i = 0; i < index; i++)
-    {                      // looping untuk mencari pointer sesuai index
-        prev = curr;       // mengubah pointer prev menjadi pointer next
-        curr = curr->next; // mengubah pointer curr menjadi pointer next
+    {
+        prev = curr;       // prev = node sebelum node yang akan dihapus
+        curr = curr->next; // curr = node yang akan dihapus
     }
-    prev->next = curr->next; // mengubah pointer prev menjadi pointer next
+    printf("%d ", curr->id); // print id node yang akan dihapus
+    prev->next = curr->next; // prev = node sebelum node yang akan dihapus
     if (curr == L->last)
-    {                   // jika pointer curr sama dengan pointer last
-        L->last = prev; // mengubah pointer last menjadi pointer prev
+    {                   // jika node yang akan dihapus adalah node terakhir
+        L->last = prev; // maka node terakhir menjadi node sebelum node yang akan dihapus
     }
-    free(curr); // menghapus pointer curr
-    L->_size--; // mengurangi size
+    free(curr); // hapus node yang akan dihapus
+    L->_size--; // kurangi jumlah node
 }

@@ -1,14 +1,21 @@
 #include "header.h"
 
+int DATA_SIZE = 1;
 int main()
 {
-    Clist L;        // membuat linked list
-    init(&L);       // menginisialisasi linked list
-    ketuaKelas(&L); // Menjalankan fungsi untuk mendapatkan ketua kelas
+    int N;           // banyaknya node
+    scanf("%d", &N); // input banyaknya node
+    Clist L[N];      // membuat array list
+    int i = 0;       // counter
+    while (N--)
+    {                      // looping untuk banyaknya node
+        init(&L[i]);       // membuat node baru
+        ketuaKelas(&L[i]); // memanggil fungsi ketuaKelas
 
-    printf("Ketua Kelas : ");
-    printAll(&L); // menampilkan data ketua kelas
-    printf("\n");
-
+        printf("@\n");   //   @
+        printAll(&L[i]); // print semua node
+        i++;             // counter
+        DATA_SIZE = 1;   // reset DATA_SIZE
+    }
     return 0;
 }

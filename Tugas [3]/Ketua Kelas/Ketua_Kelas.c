@@ -25,7 +25,6 @@ void popAt(Clist *l, int index);
 void popFirst(Clist *l);
 void popLast(Clist *l);
 void printAll(Clist *l);
-
 void init(Clist *l)
 {
     l->first = NULL;

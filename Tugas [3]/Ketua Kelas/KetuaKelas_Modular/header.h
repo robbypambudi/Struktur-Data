@@ -43,6 +43,7 @@ Tanggal     : 27-02-2022
 typedef struct CLinkedList_t
 {
     int data;
+    int id;
     struct CLinkedList_t *next;
 } CLinkedList; // struct untuk linked list
 
@@ -53,6 +54,8 @@ typedef struct Clist_t
     int _size;
 
 } Clist; // struct untuk linked list
+
+extern int DATA_SIZE;
 
 // Portotipe
 void init(Clist *l);             // fungsi untuk menginisialisasi linked list

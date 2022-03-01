@@ -2,72 +2,67 @@
 
 void ketuaKelas(Clist *l)
 {
-    int n, lompat;               // n untuk menghitung jumlah data, lompat untuk menghitung jumlah data yang akan dilompat
-    scanf("%d %d", &n, &lompat); // membaca inputan
+
+    int n, lompat;               // variabel untuk lompat
+    scanf("%d %d", &n, &lompat); // input banyaknya node dan lompat
 
     // Masukan Data kedalam Linked List
-    for (int i = 0; i < n; i++)
-    {
-        int data;           // data untuk menyimpan data
-        scanf("%d", &data); // membaca data
-        push(l, data);      // memasukan data ke dalam linked list
+    for (int i = 1; i <= n; i++)
+    {               // looping untuk banyaknya node
+        push(l, i); // memasukan data ke linked list
     }
+    // printOut(l->_size, lompat);
 
     // Poling Data
-    int i = 1;           // i untuk menghitung jumlah data yang telah dilompat
-    int temp = 1;        // temp untuk menghitung data yang akan dilompat
-    int N = 1;           // Variabel Pembantu untuk menghitung jumlah data yang telah dilompat
-    int size = l->_size; // Variabel Pembantu untuk menghitung jumlah data yang ada
+    int i = 1;           // counter
+    int temp = 1;        // variabel untuk lompat
+    int N = 1;           // counter
+    int size = l->_size; // variabel untuk size
     while (l->_size != 1)
     {
         temp += lompat; // menambahkan lompat ke variabel temp
 
-        // Logika agar data yang diproses sesuai dengan data yang ada
+        // printf("%d temp", temp);
         if (temp > l->_size)
         {
-            temp -= l->_size;
+            temp -= l->_size; // jika temp lebih besar dari size maka temp dikurangi size
         }
-        // Logika agar data yang diproses sesuai dengan data yang ada
         if (l->_size == 2 && temp == 2)
         {
-            temp = 1;
+            temp = 1; // jika size = 2 dan temp = 2 maka temp = 1
         }
 
-        // Logika untuk menghapus data yang telah dilompat
         if (temp == 1)
         {
             if (l->_size == 2 && (size % 2 == 0))
             {
-                popLast(l);
+                popLast(l); // jika size = 2 dan temp = 1 maka popLast
             }
             else
             {
-                popFirst(l);
+                popFirst(l); // jika size = 2 dan temp = 1 maka popFirst
             }
         }
         else if (temp == l->_size)
         {
+
             popLast(l);
         }
         else
         {
             popAt(l, temp - 2);
         }
-
-        // Logika untuk memproses data yang telah dilompat
         N += 1;
-
-        // Logika agar data yang diproses sesuai dengan data yang ada
+        // printf("N = %d\n", N);
         if (N > l->_size && temp > N)
         {
-            N -= 1;
+            N -= 1; //
         }
 
-        // Logika agar data yang diproses sesuai dengan data yang ada
         else if (N > l->_size && temp < N)
         {
-            N -= l->_size;
+            N -= l->_size; // jika N lebih besar dari size maka N dikurangi size
         }
-        temp = N; // mengisi variabel temp dengan nilai N
+        temp = N;
     }
 }
