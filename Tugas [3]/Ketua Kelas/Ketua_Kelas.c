@@ -109,19 +109,6 @@ void printAll(Clist *l)
     printf("\n");
 }
 
-// Create Function to deleted all linked list
-void deleteLinked(Clist *l)
-{
-    CLinkedList *curr = l->first;
-    CLinkedList *prev = l->first;
-    while (curr != NULL)
-    {
-        prev = curr;
-        curr = curr->next;
-        free(prev);
-    }
-}
-
 void ketuaKelas(Clist *l)
 {
 
