@@ -9,7 +9,7 @@
   - [Tugas Dosen](#tugas-dosen)
     - [Tugas 3](#tugas-3)
     - [Tugas 4](#tugas-4)
-  - [- Click Here](#--click-here)
+  - [Other](#other)
   - [Apa itu List](#apa-itu-list)
     - [About Me](#about-me)
     - [Disclaimer](#disclaimer)
@@ -51,7 +51,12 @@ Diambil dari
 - Postfix Evaluator
 - Infix to Post Fix
 - [Click Here](https://github.com/robbypambudi/Struktur-Data/tree/main/Tugas%20%5B4%5D) 
+
 ---
+## Other 
+Adalah kumpulan latihan pemrograman dari berbagai sumber.
+- Visit Me
+  
 ## Apa itu List
 
 List atau Senari adalah sebuah pemikiran / Konsep struktur data yang sangat dasar pada pemrograman agar lebih fleksibel, dimana setiap elemen akan ditambahkan saat dibutuhkan tidak dialokasikan dengan tempat tertentu dari awal.
