@@ -53,3 +53,6 @@ List atau Senari adalah sebuah pemikiran / Konsep struktur data yang sangat dasa
 
 ### About Me 
 [**Feel Free To Ask**](https://www.instagram.com/robbypambudi/) 
+
+### Disclaimer
+**The code above is not an absolute answer, but a reference material doing assignments**
