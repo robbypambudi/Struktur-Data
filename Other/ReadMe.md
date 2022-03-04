@@ -1,6 +1,8 @@
 
 # Petugas Rangkaian Kereta Api
 ## Deskripsi Soal
+![Deskripsi Soal](https://user-images.githubusercontent.com/34505233/156709491-0f825a1e-7bb9-43a2-9b38-345df9d98c5d.jpeg)
+
 
 ## Code 
 - Or Visit 
