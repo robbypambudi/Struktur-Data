@@ -55,7 +55,7 @@ Diambil dari
 ---
 ## Other 
 Adalah kumpulan latihan pemrograman dari berbagai sumber.
-- Visit Me
+- [Click Here](https://github.com/robbypambudi/Struktur-Data/tree/main/Other)
   
 ## Apa itu List
 
