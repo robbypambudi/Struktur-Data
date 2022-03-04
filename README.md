@@ -8,8 +8,11 @@
     - [Module [4]](#module-4)
   - [Tugas Dosen](#tugas-dosen)
     - [Tugas 3](#tugas-3)
+    - [Tugas 4](#tugas-4)
+  - [- Click Here](#--click-here)
   - [Apa itu List](#apa-itu-list)
     - [About Me](#about-me)
+    - [Disclaimer](#disclaimer)
 ---
 ## MODULE 
 Diambil dari 
@@ -20,7 +23,7 @@ Diambil dari
 - Dynamic Array
 - Linked List 
 - [Soal Latihan](https://github.com/AlproITS/StrukturData/wiki/Modul-0-(Soal-Latihan))
-- [MyCode](https://github.com/robbypambudi/Struktur-Data/tree/main/Module%20%5B0%5D)      
+- [Click Here to look myCode](https://github.com/robbypambudi/Struktur-Data/tree/main/Module%20%5B0%5D)      
 
 ### Module [1]
 - Stack
@@ -28,7 +31,7 @@ Diambil dari
 - Deque
 - Priority Queue
 - [Soal Latihan](https://github.com/AlproITS/StrukturData/wiki/Modul-1-(Soal-Latihan))
-- [MyCode](https://github.com/robbypambudi/Struktur-Data/tree/main/Module%20%5B1%5D)
+- [Click Here to look myCode](https://github.com/robbypambudi/Struktur-Data/tree/main/Module%20%5B1%5D)
 
 ### Module [2]
 
@@ -41,8 +44,13 @@ Diambil dari
 ### Tugas 3
 - Ketua Kelas
 - Marging Two Sorted Linked List
-- [Link](https://github.com/robbypambudi/Struktur-Data/tree/main/Tugas%20%5B3%5D)
+- [Click Here](https://github.com/robbypambudi/Struktur-Data/tree/main/Tugas%20%5B3%5D)
 
+### Tugas 4
+- UVA 514 Rails
+- Postfix Evaluator
+- Infix to Post Fix
+- [Click Here](https://github.com/robbypambudi/Struktur-Data/tree/main/Tugas%20%5B4%5D) 
 ---
 ## Apa itu List
 
