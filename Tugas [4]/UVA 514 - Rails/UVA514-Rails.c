@@ -20,7 +20,9 @@ void pushFront(List *list, int data);
 void popFront(List *list);
 bool solve(List *list, int *arr, int train);
 void removeLinkedList(List *list);
+void uav514(List *list, int train);
 void printList(List *list);
+
 bool is_empty(List *list);
 
 void init(List *list)
