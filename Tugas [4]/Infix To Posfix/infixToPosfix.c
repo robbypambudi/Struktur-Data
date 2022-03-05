@@ -18,6 +18,11 @@ typedef struct SList
 // Portotipe
 void init(List *list);
 void push(List *list, char data);
+char pop(List *list);
+int is_operator(char data);
+int precedence(char data);
+void InfixtoPostfix(List *list, char *infix, char *postfix);
+
 // Function
 void init(List *list)
 {
