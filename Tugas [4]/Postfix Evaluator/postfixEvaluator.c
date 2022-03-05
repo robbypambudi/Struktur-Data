@@ -18,6 +18,8 @@ typedef struct SList_t
 void init(SList *list);
 void push(SList *list, int data);
 int pop(SList *list);
+void getTop(SList *list);
+void parsingPostfix(SList *list, char *input);
 
 // Function
 
