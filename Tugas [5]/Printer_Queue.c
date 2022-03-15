@@ -54,7 +54,7 @@ void pqueue_push(PriorityQueue *pqueue, int value, bool letak)
     else
     {
         while (temp->next != NULL &&
-               temp->next->data < value)
+               temp->next->data > value)
             temp = temp->next;
         newNode->next = temp->next;
         temp->next = newNode;
