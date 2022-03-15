@@ -23,7 +23,7 @@ void pqueue_push(PriorityQueue *pqueue, int value, bool letak)
     else
     { // jika tidak
         while (temp->next != NULL &&
-               temp->next->data < value) // perulangan selama temp->next != NULL dan data pada temp->next < value
+               temp->next->data > value) // perulangan selama temp->next != NULL dan data pada temp->next > value
             temp = temp->next;           // temp = temp->next
         newNode->next = temp->next;      // next pada newNode = temp->next
         temp->next = newNode;            // temp->next = newNode

@@ -13,7 +13,7 @@ int main()
     PriorityQueue pqueue; // Deklarasi variabel pqueue
     pqueue_init(&pqueue); // Memanggil fungsi pqueue_init() untuk membuat PriorityQueue kosong
     int N;                // Deklarasi variabel N
-    printf("Masukkan banyak data: ");
+    printf("Masukkan banyak test case: ");
     scanf("%d", &N); // Input banyak data
     while (N--)
     {                   // Loop sebanyak N
@@ -25,6 +25,7 @@ int main()
         if (job < 0 || letak < 0 || letak > job)
         { // Jika job < 0 atau letak < 0 atau letak > job maka tampilkan error
             printf("Input tidak valid\n");
+            printf("job atau letak tidak boleh kurang dari 0 atau letak tidak boleh lebih dari job\n");
             return 0;
         }
 
@@ -50,6 +51,8 @@ int main()
         {
             printf("Waktu : Invailid\n"); // Jika time kosong maka tampilkan -1
         }
+        pqueue_print(&pqueue); // Memanggil fungsi pqueue_print() untuk menampilkan isi pqueue
+
         puts("------------------------------\n");
         pqueue_RemoveAll(&pqueue); // Memanggil fungsi pqueue_RemoveAll() untuk menghapus semua data dari pqueue
     }
