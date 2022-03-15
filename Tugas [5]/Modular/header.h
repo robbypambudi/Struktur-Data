@@ -38,11 +38,11 @@ typedef struct pqueue_t
 } PriorityQueue;      // Nama struct
 
 // Fungsi Prototype
-void pqueue_init(PriorityQueue *pqueue);
-bool pqueue_isEmpty(PriorityQueue *pqueue);
-void pqueue_push(PriorityQueue *pqueue, int value, bool letak);
-void pqueue_pop(PriorityQueue *pqueue);
-int pqueue_top(PriorityQueue *pqueue);
-void pqueue_print(PriorityQueue *pqueue);
-int solve(PriorityQueue *pqueue);
-void pqueue_RemoveAll(PriorityQueue *pqueue);
+void pqueue_init(PriorityQueue *pqueue);                        // Membuat PriorityQueue kosong
+bool pqueue_isEmpty(PriorityQueue *pqueue);                     // Mengecek apakah PriorityQueue kosong
+void pqueue_push(PriorityQueue *pqueue, int value, bool letak); // Menambahkan data ke dalam PriorityQueue
+void pqueue_pop(PriorityQueue *pqueue);                         // Menghapus data teratas dari PriorityQueue
+int pqueue_top(PriorityQueue *pqueue);                          // Mengembalikan nilai teratas dari PriorityQueue
+void pqueue_print(PriorityQueue *pqueue);                       // Menampilkan isi PriorityQueue
+int solve(PriorityQueue *pqueue);                               // Solve
+void pqueue_RemoveAll(PriorityQueue *pqueue);                   // Menghapus semua data dari PriorityQueue

@@ -51,7 +51,7 @@ int main()
         {
             printf("Waktu : Invailid\n"); // Jika time kosong maka tampilkan -1
         }
-        pqueue_print(&pqueue); // Memanggil fungsi pqueue_print() untuk menampilkan isi pqueue
+        // pqueue_print(&pqueue); // Memanggil fungsi pqueue_print() untuk menampilkan isi pqueue
 
         puts("------------------------------\n");
         pqueue_RemoveAll(&pqueue); // Memanggil fungsi pqueue_RemoveAll() untuk menghapus semua data dari pqueue
