@@ -175,13 +175,16 @@ int main()
     BST set;
     bst_init(&set);
 
-    bst_insert(&set, 6);
-    bst_insert(&set, 1);
-    bst_insert(&set, 8);
-    bst_insert(&set, 12);
-    bst_insert(&set, 1);
-    bst_insert(&set, 3);
-    bst_insert(&set, 7);
+    printf("Masukan Banyak data : ");
+    int N;
+    scanf("%d", &N);
+    printf("Masukan Data :");
+    while (N--)
+    {
+        int data;
+        scanf("%d", &data);
+        bst_insert(&set, data);
+    }
 
     bst_print(&set);
 }
