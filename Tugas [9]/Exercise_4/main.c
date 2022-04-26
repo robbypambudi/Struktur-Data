@@ -1,10 +1,4 @@
-/*
-	Nama   = Katarina Inezita Prambudi
-	NRP    = 5025211148
-	Kelas  = Struktur Data E
 
-	Main Function
-*/
 #include "header.h"
 #include <stdio.h>
 #include <stdlib.h>
