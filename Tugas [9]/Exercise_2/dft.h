@@ -56,6 +56,7 @@ Tree edge :  E -> G
 Cross edge :  G -> C
 Cross edge :  D -> E
 Tree edge :  D -> F
+Cross edge :  F -> B
 Cross edge :  F -> E
 Cross edge :  F -> G
 */
