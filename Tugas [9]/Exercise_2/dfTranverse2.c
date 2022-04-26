@@ -14,7 +14,7 @@ void dfTraverse2(GraphPtr G, int s)
         {
             printf("Tree edge :  %s -> %s\n", G->vertex[s].id, G->vertex[edge->child].id);
             G->vertex[edge->child].parent = s;
-            dfTraverse2(G, edge->child);
+            dfTraverse(G, edge->child);
         }
         else
         {

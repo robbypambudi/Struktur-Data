@@ -1,5 +1,6 @@
 #include "dft.h"
 
+// Fungsi untuk mencetak Graph Secara depthFirstTransversal
 void depthFirstTraversal(GraphPtr G, int s)
 {
 	// do a depth first traversal of G starting from vertex s
@@ -18,6 +19,8 @@ void depthFirstTraversal(GraphPtr G, int s)
 			dfTraverse(G, j);
 	printf("\n");
 
+	// Cetak Tree Edge, Back Edge, dan Cross Edge, forwad Edge
+
 	// do a depth first traversal of G starting from vertex s
 	for (j = 1; j <= G->numV; j++)
 	{
@@ -25,11 +28,12 @@ void depthFirstTraversal(GraphPtr G, int s)
 		G->vertex[j].parent = 0;
 	}
 
-	dfTraverse2(G, s); // start traversal from s
-					   // // check if any White vertices remain; if so, start another traversal
-					   // // for (j = 1; j <= G->numV; j++)
-					   // // 	if (G->vertex[j].colour == White)
-					   // // 		dfTraverse2(G, j);
-					   // printf("\n");
+	dfTraverse2(G, s);
+	// start traversal from s
+	// check if any White vertices remain; if so, start another traversal
+	for (j = 1; j <= G->numV; j++)
+		if (G->vertex[j].colour == White)
+			dfTraverse2(G, j);
+	printf("\n");
 
 } // end depthFirstTraversal
