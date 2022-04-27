@@ -1,6 +1,6 @@
-#include <iostream>
-
-using namespace std;
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 typedef struct dynamicArray_t
 {
@@ -23,7 +23,7 @@ void init(dynamicArray *array)
 void getString(dynamicArray *array)
 {
     char input[100];
-    cin.getline(input, 100);
+    gets(input);
     int length = strlen(input);
     if (array->capacity < length)
     {
@@ -40,7 +40,7 @@ void printString(dynamicArray *array)
 {
     for (int i = 0; i < array->size; i++)
     {
-        cout << array->data[i];
+        printf("%c", array->data[i]);
     }
 }
 int main()
