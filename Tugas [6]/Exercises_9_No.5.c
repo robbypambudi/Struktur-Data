@@ -1,7 +1,6 @@
-/*
-Write a function that, given the root of a binary search tree, deletes the smallest node and
-returns a pointer to the root of the reconstructed tree.
-*/
+/*Write a function that, given the root of a binary search tree, deletes the root and returns a
+pointer to the root of the reconstructed tree. Write the function replacing the root by (i) its
+in-order successor and (ii) its in-order predecessor.*/
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -273,21 +272,30 @@ int main()
     BST set;
     bst_init(&set);
 
-    bst_insert(&set, 6);
-    bst_insert(&set, 1);
-    bst_insert(&set, 8);
-    bst_insert(&set, 12);
-    bst_insert(&set, 1);
-    bst_insert(&set, 3);
-    bst_insert(&set, 7);
+    printf("Masukan Banyak data : "); // Input banyak data
+    int N;
+    scanf("%d", &N); // Input banyak data
+    printf("Masukan Data :");
+    while (N--)
+    {                           // Input data
+        int data;               // Deklarasi variabel data
+        scanf("%d", &data);     // Input data
+        bst_insert(&set, data); // Input data
+    }
 
+    bst_print(&set);
+    puts("----------------------");
+    puts("Deleted Min Node");
     bst_delMinNode(&set);
     bst_print(&set);
+    puts("----------------------");
+    puts("Deleted Max Node");
     bst_delMaxNode(&set);
     bst_print(&set);
+    puts("----------------------");
+    puts("Deleted Root Node");
     bst_delRoot(&set);
     bst_print(&set);
-    bst_delRoot(&set);
 }
 
 /*

@@ -1,3 +1,4 @@
+
 /*
 a binary tree consists of an integer key field and pointers to the left subtree, right subtree, and
 parent. Write the declarations required for building a tree and code to create an empty tree.

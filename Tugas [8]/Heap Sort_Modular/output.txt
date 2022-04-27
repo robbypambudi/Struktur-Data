@@ -1,5 +1,0 @@
-1.	10 data diporeleh waktu 	:	 0.000113 ms
-2.	100 data diporeleh waktu 	:	 0.000094 ms
-3.	1000 data diporeleh waktu 	:	 0.000355 ms
-4.	10000 data diporeleh waktu 	:	 0.002829 ms
-5.	100000 data diporeleh waktu :	 0.026633 ms

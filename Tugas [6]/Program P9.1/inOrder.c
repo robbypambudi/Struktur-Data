@@ -1,3 +1,5 @@
+// Fungsi untuk mencetak secara inOrder
+
 #include "header.h"
 
 void inOrder(TreeNodePtr node)

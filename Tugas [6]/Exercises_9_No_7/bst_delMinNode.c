@@ -1,4 +1,5 @@
-// Fungsi untuk mencari min node
+
+// Fungsi untuk menghapus node min
 #include "header.h"
 
 void bst_delMinNode(BST *bst)

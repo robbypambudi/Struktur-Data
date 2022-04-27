@@ -7,6 +7,21 @@ Tanggal     : 12 Maret 2020
 */
 
 #include "header.h" // Header file
+void reverse(PriorityQueue *pqueue)
+{
+    PQueueNode *temp = pqueue->_top; // Deklarasi variabel temp
+    PQueueNode *prev = NULL;         // Deklarasi variabel prev
+    PQueueNode *next = NULL;         // Deklarasi variabel next
+
+    while (temp != NULL)
+    {                      // Perulangan selama temp != NULL
+        next = temp->next; // next = temp->next
+        temp->next = prev; // temp->next = prev
+        prev = temp;       // prev = temp
+        temp = next;       // temp = next
+    }
+    pqueue->_top = prev; // pqueue->_top = prev
+}
 
 int main()
 {
@@ -42,14 +57,33 @@ int main()
             }
             pqueue_push(&pqueue, data, false); // Memanggil fungsi pqueue_push() untuk menambahkan data ke dalam pqueue
         }
+        // check data is all same or not
+        bool same = true;               // Deklarasi variabel same
+        PQueueNode *temp = pqueue._top; // Deklarasi variabel temp
+        while (temp->next != NULL)
+        {
+            if (temp->data != temp->next->data)
+            { // Jika temp->data != temp->next->data maka same = false
+                same = false;
+                break;
+            }
+            temp = temp->next; // temp = temp->next
+        }
+        if (same)
+        {
+            pqueue_print(&pqueue); // Memanggil fungsi pqueue_print() untuk menampilkan isi pqueue
+            reverse(&pqueue);      // Memanggil fungsi reverse() untuk membalikkan data
+            pqueue_print(&pqueue); // Memanggil fungsi pqueue_print() untuk menampilkan isi pqueue
+        }
         int time = solve(&pqueue); // Memanggil fungsi solve() untuk menyelesaikan tugas
+
         if (time != -1)
         {
             printf("Waktu : %d\n", time); // Jika time tidak kosong maka tampilkan waktu
         }
         else
         {
-            printf("Waktu : Invailid\n"); // Jika time kosong maka tampilkan -1
+            printf("Waktu : 1\n"); // Jika time kosong maka tampilkan -1
         }
         // pqueue_print(&pqueue); // Memanggil fungsi pqueue_print() untuk menampilkan isi pqueue
 

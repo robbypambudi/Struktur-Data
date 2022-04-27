@@ -1,3 +1,5 @@
+//
+// fungsi main
 
 #include "header.h"
 

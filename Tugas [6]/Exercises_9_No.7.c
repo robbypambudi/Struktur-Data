@@ -6,7 +6,9 @@ returns a pointer to the root of the reconstructed tree.
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
-
+#include <string.h>
+#define max(a, b) (((a) > (b)) ? (a) : (b))
+int maxLevel[10000];
 typedef struct bstnode_t
 {
     int key;
@@ -117,6 +119,15 @@ BSTNode *__bst_findMaxNode(BSTNode *node)
 
     return currNode;
 }
+
+int __bst_width(BSTNode *node, int level)
+{
+    if (node == NULL)
+        return 0;
+    if (level == 1)
+        return 1;
+    return __bst_width(node->left, level - 1) + __bst_width(node->right, level - 1);
+}
 /* ********************************************
  * Primary Function
  * ********************************************/
@@ -214,98 +225,33 @@ void bst_delRoot(BST *bst)
     }
 }
 // Create Function to print Maximum number of nodes at any level
-void bst_maxLevel(BST *bst)
-{
-    int maxLevel = 0;
-    int level = 0;
-    int count = 0;
-    BSTNode *temp = bst->_root;
-    while (temp != NULL)
-    {
-        if (temp->left != NULL)
-        {
-            temp = temp->left;
-            level++;
-        }
-        else if (temp->right != NULL)
-        {
-            temp = temp->right;
-            level++;
-        }
-        else
-        {
-            if (level > maxLevel)
-                maxLevel = level;
-            level = 0;
-            temp = bst->_root;
-        }
-        printf("Maximum number of nodes at any level is %d\n", maxLevel);
-    }
-}
 
-void bst_width(BST *bst)
+int height(BSTNode *node)
 {
-    if (bst->_root == NULL)
-    {
-        printf("Tree is empty\n");
-    }
+    if (node == NULL)
+        return 0;
     else
     {
-        int height = 0;
-        int width = 0;
-        int maxWidth = 0;
-        BSTNode *temp = bst->_root;
-        BSTNode *currNode = bst->_root;
-        BSTNode *prevNode = bst->_root;
-        BSTNode *nextNode = bst->_root;
-        while (temp != NULL)
-        {
-            height++;
-            temp = temp->left;
-        }
-        for (int i = 0; i < height; i++)
-        {
-            currNode = bst->_root;
-            prevNode = bst->_root;
-            nextNode = bst->_root;
-            while (currNode != NULL)
-            {
-                if (i == 0)
-                {
-                    nextNode = currNode->right;
-                    width++;
-                }
-                else
-                {
-                    nextNode = currNode->left;
-                    width++;
-                }
-                if (nextNode != NULL)
-                {
-                    prevNode = currNode;
-                    currNode = nextNode;
-                }
-                else
-                {
-                    if (i == 0)
-                    {
-                        currNode = currNode->right;
-                        width++;
-                    }
-                    else
-                    {
-                        currNode = currNode->left;
-                        width++;
-                    }
-                }
-            }
-            if (width > maxWidth)
-                maxWidth = width;
-            width = 0;
-        }
-        printf("Maximum width of the tree is %d\n", maxWidth);
-        bst_maxLevel(bst);
+        int lheight = height(node->left);
+        int rheight = height(node->right);
+        if (lheight > rheight)
+            return (lheight + 1);
+        else
+            return (rheight + 1);
     }
+}
+int bst_width(BST *bst)
+{
+    int maxWidth = 0;
+    int width = 0;
+    int h = height(bst->_root);
+    for (int i = 1; i <= h; i++)
+    {
+        width = __bst_width(bst->_root, i);
+        if (width > maxWidth)
+            maxWidth = width;
+    }
+    return maxWidth;
 }
 
 /**
@@ -361,28 +307,69 @@ void bst_print(BST *bst)
     bst_postOrder(node);
     printf("\n");
 }
+void __maximumEachLevel(BSTNode *root, int level)
+{
+    if (root == NULL)
+        return;
+    if (level == 1)
+        printf("%d ", root->key);
+    else
+    {
+        __maximumEachLevel(root->left, level + 1);
+        __maximumEachLevel(root->right, level + 1);
+    }
+}
+
+void maximumEachLevel(BST *bst)
+{
+    if (bst == NULL)
+        return;
+    int h = height(bst->_root);
+    for (int i = 1; i <= h; i++)
+    {
+        __maximumEachLevel(bst->_root, i);
+    }
+}
 
 int main()
 {
     BST set;
     bst_init(&set);
-
-    bst_insert(&set, 6);
-    bst_insert(&set, 1);
-    bst_insert(&set, 8);
-    bst_insert(&set, 12);
-    bst_insert(&set, 1);
-    bst_insert(&set, 3);
-    bst_insert(&set, 7);
-    bst_width(&set);
-
+    memset(maxLevel, -1, sizeof(maxLevel));
+    printf("Masukan Banyak data : "); // Input banyak data
+    int N;
+    scanf("%d", &N); // Input banyak data
+    printf("Masukan Data :");
+    while (N--)
+    {                           // Input data
+        int data;               // Deklarasi variabel data
+        scanf("%d", &data);     // Input data
+        bst_insert(&set, data); // Input data
+    }
+    int width = bst_width(&set);
+    printf("Width of the tree is %d\n", width);
+    maximumEachLevel(&set);
+    printf("Maximum each level : ");
+    int count = sizeof(maxLevel) / sizeof(maxLevel[0]);
+    for (int i = 1; i < count; i++)
+    {
+        printf("Level %d, Max Number is %d ", i, maxLevel[i]);
+        if (maxLevel[i] == -1)
+            break;
+    }
+    // bst_print(&set);
+    // puts("----------------------");
+    // puts("Deleted Min Node");
     // bst_delMinNode(&set);
     // bst_print(&set);
+    // puts("----------------------");
+    // puts("Deleted Max Node");
     // bst_delMaxNode(&set);
     // bst_print(&set);
+    // puts("----------------------");
+    // puts("Deleted Root Node");
     // bst_delRoot(&set);
     // bst_print(&set);
-    // bst_delRoot(&set);
 }
 
 /*

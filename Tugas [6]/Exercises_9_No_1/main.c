@@ -1,6 +1,7 @@
+/
 #include "header.h"
 
-int main()
+    int main()
 {
     puts("Soal 1 -Inisialisasi BST");
     BST set;        // Deklarasi variabel set

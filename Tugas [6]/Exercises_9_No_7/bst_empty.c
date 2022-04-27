@@ -1,4 +1,3 @@
-
 // Fungsi untuk mengecek apakah fungsi tersebut kosong atau tidak
 #include "header.h"
 

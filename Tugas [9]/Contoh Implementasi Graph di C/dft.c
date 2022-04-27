@@ -10,7 +10,8 @@ int main()
 	G = newGraph(numVertices);
 	buildGraph(in, G);
 	printGraph(G);
-	depthFirstTraversal(G, 4);
+	depthFirstTraversal(G, 1);
+	printPath(G, "A");
 	printPath(G, "B");
 	printPath(G, "C");
 	printPath(G, "D");
