@@ -2,3 +2,5 @@ BELAJAR
 .vscode
 senari_list
 Friend
+*.o
+*.d
