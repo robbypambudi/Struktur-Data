@@ -61,6 +61,7 @@ void getTop(SList *list)
         printf("%d\n", list->top->data);
     }
 }
+
 void parsingPostfix(SList *list, char *input)
 {
     // printf("%lu\n", strlen(input));
@@ -111,3 +112,5 @@ int main()
         scanf("%s", input);
     }
 }
+
+// scanf("%[\n]", input);
