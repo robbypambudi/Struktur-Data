@@ -1,3 +1,20 @@
+/**
+ * @file PercobaanHashing.c
+ * @author RobbyPambudi
+ * @brief
+ * @version 0.1
+ * @date 2022-05-25
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
+
+/*
+Problem
+Saya masi mendapatkan data 40 ganda dalam numbers.out
+yang seharausnya adalah 40 unik.
+ */
+
 // implement hashing with chaining is to use a single array and use array subscripts as links
 #include <stdio.h>
 #include <stdlib.h>
