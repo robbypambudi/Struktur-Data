@@ -68,7 +68,7 @@ int main()
                 hash[f].next = hash[k].next;
                 hash[k].next = f;
             }
-            else if (hash[k].next == -1 && hash[k].num == num)
+            else if (hash[k].next != -1 && hash[k].num == num)
                 continue;
 
             else
